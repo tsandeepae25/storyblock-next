@@ -11,6 +11,7 @@ const BlogDetails = () => {
   const [blog, setBlog] = useState(null);
   const [isLoading, setisLoading] = useState(false);
 
+
   useEffect(() => {
     setisLoading(true)
     axios.get(`https://api.storyblok.com/v2/cdn/stories/blogs/${slug}?version=draft&token=Fng0zxrBaX7QHQZ1eEYUVwtt&cv=1658689252`)
