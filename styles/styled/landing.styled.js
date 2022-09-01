@@ -7,6 +7,7 @@ export const HomeMain = styled.div`
     padding: 40px;
     h1{
       font-size: 35px;
+      color: #fff !important;
     }
     p{
       font-size: 15px;
@@ -17,6 +18,13 @@ export const HomeMain = styled.div`
       width: 100%;
       border-radius: 50px;
     }
+  }
+
+  .sub-header{
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 400;
   }
 
 

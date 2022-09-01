@@ -1,27 +1,30 @@
+import { getStoryblokApi } from "@storyblok/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Blog from "../../components/blog";
 import { BlogList } from "../../styles/styled/blogList.styled";
 
-const Blogs = () => {
+const Blogs = (props) => {
 
   const [isLoading, setisLoading] = useState(false);
   const [blogs, setBlogs] = useState();
 
+  console.log(props.data.stories);
 
-  useEffect(() => {
-    setisLoading(true)
-    axios.get(`https://api.storyblok.com/v2/cdn/stories?version=draft&token=Fng0zxrBaX7QHQZ1eEYUVwtt&cv=1656589763`)
-      // axios.get(`https://api.storyblok.com/v1/cdn/stories?version=published&token=Zabrpglv0dy5ew3izqHOhAtt`)
-      .then(res => {
-        const persons = res.data;
-        setBlogs(res.data.stories.filter((stroy) => stroy.content.component === 'Blog'))
-        console.log(res.data.stories.filter((stroy) => stroy.content.component === 'Blog'));
-        console.log(res.data.stories);
-        setisLoading(false)
 
-      })
-  }, []);
+  // useEffect(() => {
+  //   setisLoading(true)
+  //   axios.get(`https://api.storyblok.com/v2/cdn/stories?version=draft&token=Fng0zxrBaX7QHQZ1eEYUVwtt&cv=1656589763`)
+  //     // axios.get(`https://api.storyblok.com/v1/cdn/stories?version=published&token=Zabrpglv0dy5ew3izqHOhAtt`)
+  //     .then(res => {
+  //       const persons = res.data;
+  //       setBlogs(res.data.stories.filter((stroy) => stroy.content.component === 'Blog'))
+  //       console.log(res.data.stories.filter((stroy) => stroy.content.component === 'Blog'));
+  //       console.log(res.data.stories);
+  //       setisLoading(false)
+
+  //     })
+  // }, []);
 
 
   return (
@@ -33,7 +36,7 @@ const Blogs = () => {
       </div>
       <div className="blog-list">
         {
-          blogs && blogs.map((blog) => (
+          props.data.stories && props.data.stories.map((blog) => (
             <Blog blog={blog}></Blog>
           ))
         }
@@ -43,3 +46,25 @@ const Blogs = () => {
 }
 
 export default Blogs;
+
+
+export async function getStaticProps() {
+  // home is the default slug for the homepage in Storyblok
+  // let slug = "blogs";
+
+  // load the draft version
+  let sbParams = {
+    version: "draft", // or 'published'
+    starts_with: "blogs/",
+  };
+
+  const storyblokApi = getStoryblokApi();
+  let { data } = await storyblokApi.get(`cdn/stories/`, sbParams);
+
+  return {
+    props: {
+      data
+    },
+    revalidate: 3600, // revalidate every hour
+  };
+}
