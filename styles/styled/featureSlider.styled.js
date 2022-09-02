@@ -4,8 +4,8 @@ export const SliderFeatureStyle = styled.div`
 
   .swiper-button-next, .swiper-button-prev{
     background: #FFD700;
-    width: 50px;
-    height:50px;
+    width: 70px;
+    height:70px;
     border-radius: 50%;
     &::after{
       transform: scale(0.5);
@@ -13,9 +13,19 @@ export const SliderFeatureStyle = styled.div`
     }
   }
 
+  .swiper-button-next{
+    right: calc(50% - ((491px * .5) + 79px + 60px));
+  }
+  .swiper-button-prev{
+    left: calc(50% - ((491px * .5) + 79px + 60px));
+  }
+
+
+
   .slide_img{
     width: 100%;
     height: 100%;
+    border-radius: 8px;
   }
   
   .slide_desc{
@@ -24,7 +34,7 @@ export const SliderFeatureStyle = styled.div`
     margin-top: 20px;
   }
 
-  .swiper-slide-next{
+  .swiper-slide-active{
     .slide_desc{
       visibility: visible;
     }

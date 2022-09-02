@@ -17,30 +17,18 @@ const FeatureSlider = ({ data }) => {
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
-        slidesPerView={3}
-        slidesPerGroupSkip={1}
+        slidesPerView={2.05}
+        centeredSlides={true}
+        loop={true}
         navigation
         pagination={{ clickable: true }}
         scrollbar={false}
       >
 
-        {/* <SwiperSlide>
-          <Image src="/slide-1.jpg" width="300" height="200" layout="responsive" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="/slide-2.jpg" width="300" height="200" layout="responsive" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="/slide-1.jpg" width="300" height="200" layout="responsive" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Image src="/slide-2.jpg" width="300" height="200" layout="responsive" />
-        </SwiperSlide> */}
-
         {
           data.story.content.section_blocks[0].slide_items.map((slide) => (
             <SwiperSlide>
-              <img className="slide_img" src={slide.slider_img} width="300" height="200" layout="responsive" />
+              <img className="slide_img" src={slide.slider_img} layout="responsive" />
               <div className="slide_desc">
                 <h2>Test Desc</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, deleniti?</p>
@@ -48,7 +36,6 @@ const FeatureSlider = ({ data }) => {
             </SwiperSlide>
           ))
         }
-
 
       </Swiper>
 

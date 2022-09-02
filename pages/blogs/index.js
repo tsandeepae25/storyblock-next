@@ -8,8 +8,13 @@ const Blogs = (props) => {
 
   const [isLoading, setisLoading] = useState(false);
   const [blogs, setBlogs] = useState();
+  const [, set] = useState();
 
   console.log(props.data.stories);
+
+  useEffect(() => {
+
+  }, []);
 
 
   // useEffect(() => {
@@ -28,7 +33,9 @@ const Blogs = (props) => {
 
 
   return (
+
     <BlogList>
+
       {isLoading && <div className='loading-box'>Loading...</div>}
       <div className="sub-heading">
         <h3>All Recent Blogs</h3>
@@ -51,7 +58,6 @@ export default Blogs;
 export async function getStaticProps() {
   // home is the default slug for the homepage in Storyblok
   // let slug = "blogs";
-
   // load the draft version
   let sbParams = {
     version: "draft", // or 'published'
@@ -62,9 +68,11 @@ export async function getStaticProps() {
   let { data } = await storyblokApi.get(`cdn/stories/`, sbParams);
 
   return {
+
     props: {
-      data
+      data,
     },
+
     revalidate: 3600, // revalidate every hour
   };
 }
