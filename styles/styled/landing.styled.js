@@ -23,7 +23,7 @@ export const HomeMain = styled.div`
   .sub-header{
     font-size: 28px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     font-weight: 400;
   }
 

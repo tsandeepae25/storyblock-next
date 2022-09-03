@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import FeatureSlider from '../components/landing/feature-slider';
+import LearnHow from '../components/landing/learnHow-slider';
+import NewsSlider from '../components/landing/news-slider';
 import styles from '../styles/Home.module.css'
 import { HomeMain } from '../styles/styled/landing.styled';
 
@@ -39,10 +41,14 @@ export default function Home(props) {
         <img src={data && data.image.filename} />
       </div>
 
-      <h2 className='sub-header'>Protect Life, Truth and Justice</h2>
 
       <FeatureSlider data={props.data} />
-
+      <NewsSlider data={props.data} />
+      <LearnHow data={props.data} />
+      <br />
+      <br />
+      <br />
+      <br />
 
     </HomeMain>
 

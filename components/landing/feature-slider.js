@@ -14,6 +14,8 @@ const FeatureSlider = ({ data }) => {
 
   return (
     <SliderFeatureStyle>
+      <h2 className='sub-header'>Protect Life, Truth and Justice</h2>
+
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
