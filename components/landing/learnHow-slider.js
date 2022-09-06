@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 
 const LearnHow = ({ data }) => {
-  console.log(data.story.content.section_blocks[2].slide_items);
+  // console.log(data.story.content.section_blocks[2].slide_items);
 
   return (
     <LearnHowSlider>
@@ -17,7 +17,6 @@ const LearnHow = ({ data }) => {
         slidesPerView={1.5}
         loop={true}
         navigation
-        pagination={{ clickable: true }}
         scrollbar={false}
       >
         {

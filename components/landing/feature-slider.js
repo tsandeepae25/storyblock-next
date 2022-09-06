@@ -4,13 +4,12 @@ import { getStoryblokApi } from "@storyblok/react";
 import { useEffect, useState } from "react";
 import { SliderFeatureStyle } from "../../styles/styled/featureSlider.styled";
 import "swiper/css";
-import "swiper/css/navigation";
+// import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 const FeatureSlider = ({ data }) => {
 
 
-  console.log(data.story.content.section_blocks[0].slide_items);
-
+  // console.log(data.story.content.section_blocks[0].slide_items);
 
   return (
     <SliderFeatureStyle>
@@ -23,7 +22,6 @@ const FeatureSlider = ({ data }) => {
         centeredSlides={true}
         loop={true}
         navigation
-        pagination={{ clickable: true }}
         scrollbar={false}
       >
 

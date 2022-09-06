@@ -31,8 +31,6 @@ export default function Home(props) {
   console.log(props.data);
 
   return (
-
-
     <HomeMain>
       {isLoading && <div className='loading-box'>Loading...</div>}
       <div className='page-box'>
@@ -41,7 +39,6 @@ export default function Home(props) {
         <img src={data && data.image.filename} />
       </div>
 
-
       <FeatureSlider data={props.data} />
       <NewsSlider data={props.data} />
       <LearnHow data={props.data} />
@@ -49,17 +46,9 @@ export default function Home(props) {
       <br />
       <br />
       <br />
-
     </HomeMain>
-
-
-
-
   )
 }
-
-
-
 
 export async function getStaticProps() {
   // home is the default slug for the homepage in Storyblok
