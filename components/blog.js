@@ -7,7 +7,7 @@ const Blog = ({ blog }) => {
     <BlogItem>
       <Link href={'/blogs/' + blog.slug}>
         <a>
-          <h4>{blog.content.title}</h4>
+          <h4 className="text-2xl font-normal leading-2 ">{blog.content.title}</h4>
           <img src={blog.content.blog_img} />
           <p>{blog.content.long_text}</p>
         </a>

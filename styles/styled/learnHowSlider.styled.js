@@ -33,6 +33,9 @@ export const LearnHowSlider = styled.div`
           padding: 10px 20px;
           border-radius: 40px;
           margin-top: auto;
+          background: #fff;
+          color: #000;
+          font-size: 13px;
         }
       }
       .slide_img{

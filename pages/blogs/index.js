@@ -34,21 +34,26 @@ const Blogs = (props) => {
 
   return (
 
-    <BlogList>
+    <div>
+      {/* <BlogList>
+      </BlogList> */}
 
       {isLoading && <div className='loading-box'>Loading...</div>}
-      <div className="sub-heading">
-        <h3>All Recent Blogs</h3>
-        <p>Read your favourite blogs form popular blogers</p>
+      <div className="sub-heading mt-6 mb-14">
+        <h3 className="text-3xl text-center mb-0">All Recent Blogs</h3>
+        <p className="text-center mt-0">Read your favourite blogs form popular blogers</p>
       </div>
-      <div className="blog-list">
+      <div className="blog-list grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
         {
           props.data.stories && props.data.stories.map((blog) => (
             <Blog blog={blog}></Blog>
           ))
         }
       </div>
-    </BlogList>
+
+    </div>
+
+
   );
 }
 

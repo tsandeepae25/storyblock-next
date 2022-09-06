@@ -19,6 +19,7 @@ const LearnHow = ({ data }) => {
         navigation
         scrollbar={false}
       >
+
         {
           data.story.content.section_blocks[2].slide_items.map((slide) => (
             <SwiperSlide>
@@ -36,6 +37,9 @@ const LearnHow = ({ data }) => {
           ))
         }
       </Swiper>
+      <br />
+      <br />
+      <br />
     </LearnHowSlider>
   );
 }

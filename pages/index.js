@@ -2,8 +2,10 @@ import { getStoryblokApi } from '@storyblok/react';
 import Head from 'next/head'
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
+import AxonAccelarate from '../components/landing/axon-accelarate';
 import FeatureSlider from '../components/landing/feature-slider';
 import LearnHow from '../components/landing/learnHow-slider';
+import NewsFromAxon from '../components/landing/news-from-axon';
 import NewsSlider from '../components/landing/news-slider';
 import styles from '../styles/Home.module.css'
 import { HomeMain } from '../styles/styled/landing.styled';
@@ -38,14 +40,11 @@ export default function Home(props) {
         <p> {data && data.description}</p>
         <img src={data && data.image.filename} />
       </div>
-
       <FeatureSlider data={props.data} />
       <NewsSlider data={props.data} />
       <LearnHow data={props.data} />
-      <br />
-      <br />
-      <br />
-      <br />
+      <NewsFromAxon />
+
     </HomeMain>
   )
 }
