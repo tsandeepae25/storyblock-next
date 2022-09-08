@@ -3,21 +3,28 @@ import styled from "styled-components";
 export const SliderFeatureStyle = styled.div`
 
   .swiper-button-next, .swiper-button-prev{
-    background: #FFD700;
-    width: 70px;
-    height:70px;
-    border-radius: 50%;
+    background: transparent;
+    width: 50%;
+    border-radius: initial;
+    top: 22px;
+    height: 100%;
     &::after{
       transform: scale(0.5);
-      color: #000;
+      display: none;
     }
   }
 
   .swiper-button-next{
-    right: calc(50% - ((491px * .5) + 79px + 60px));
+    right:0;  
+    cursor: url(b_next.svg), auto;
+
   }
   .swiper-button-prev{
-    left: calc(50% - ((491px * .5) + 79px + 60px));
+    left: 0;
+    
+    cursor: url(b_prev.svg), auto;
+
+
   }
 
 
@@ -32,6 +39,10 @@ export const SliderFeatureStyle = styled.div`
     visibility: hidden;
     text-align: center;
     margin-top: 20px;
+  }
+
+  .swiper-slide{
+    /* cursor: url(b_next.svg), auto; */
   }
 
   .swiper-slide-active{

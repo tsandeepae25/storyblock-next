@@ -7,8 +7,8 @@ const Blog = ({ blog }) => {
     <BlogItem>
       <Link href={'/blogs/' + blog.slug}>
         <a>
-          <h4 className="text-2xl font-normal leading-2 ">{blog.content.title}</h4>
-          <img src={blog.content.blog_img} />
+          <h4 className="text-2xl font-normal leading-2 h-16">{blog.content.title}</h4>
+          <img className="md:h-52 sm:h-64 h-72 " src={blog.content.blog_img} />
           <p>{blog.content.long_text}</p>
         </a>
       </Link>

@@ -20,6 +20,8 @@ export const SliderNews = styled.div`
     /* margin-left: 100px; */
     /* margin: 0 10px; */
     transition:all .3s ease-in-out;
+    cursor: url(b_angle.svg), auto;
+
   }
 
   .slide-left_offset{

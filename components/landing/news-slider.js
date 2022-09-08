@@ -9,6 +9,8 @@ import "swiper/css/pagination";
 
 const NewsSlider = ({ data }) => {
   // console.log(data.story.content.section_blocks[1].slide_items);
+
+
   return (
     <SliderNews>
       <h2 className='sub-header'> The Latest News From AXON</h2>
@@ -25,14 +27,14 @@ const NewsSlider = ({ data }) => {
         breakpoints={{
           640: {
             slidesPerView: 1.5,
-            spaceBetween: 0,
+            spaceBetween: 10,
             centeredSlides: false,
             pagination: {
               type: 'progressbar',
             }
           },
           768: {
-            slidesPerView: 1.5,
+            slidesPerView: 2,
             spaceBetween: 0,
             centeredSlides: false,
             pagination: {

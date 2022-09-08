@@ -40,10 +40,14 @@ export default function Home(props) {
         <p> {data && data.description}</p>
         <img src={data && data.image.filename} />
       </div>
+
       <FeatureSlider data={props.data} />
+
       <NewsSlider data={props.data} />
+
       <LearnHow data={props.data} />
-      <NewsFromAxon />
+
+      <NewsFromAxon data={props.data} />
 
     </HomeMain>
   )
@@ -57,6 +61,7 @@ export async function getStaticProps() {
   let sbParams = {
     version: "draft", // or 'published'
     // starts_with: "",
+    resolve_relations: 'featured_blogs.featured',
   };
 
   const storyblokApi = getStoryblokApi();

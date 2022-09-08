@@ -33,6 +33,7 @@ const FeatureSlider = ({ data }) => {
                 <h2>Test Desc</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, deleniti?</p>
               </div>
+
             </SwiperSlide>
           ))
         }
@@ -43,6 +44,8 @@ const FeatureSlider = ({ data }) => {
       <br />
       <br />
       <br />
+
+
     </SliderFeatureStyle>
   );
 }
