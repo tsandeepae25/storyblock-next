@@ -21,10 +21,7 @@ export const SliderFeatureStyle = styled.div`
   }
   .swiper-button-prev{
     left: 0;
-    
     cursor: url(b_prev.svg), auto;
-
-
   }
 
 

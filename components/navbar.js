@@ -15,7 +15,7 @@ const Navbar = () => {
       .then(res => {
         const persons = res.data;
         setNavData(res.data)
-        console.log(res.data.story.content.nav);
+        // console.log(res.data.story.content.nav);
         setNavData(res.data.story.content.nav);
         setlogoPath(res.data.story.content.header_logo[0].logo.filename)
       })
@@ -26,8 +26,8 @@ const Navbar = () => {
       <img className="logo" src={logoPath} alt="" />
       <ul className="nav">
         {
-          navData && navData.map((link) => (
-            <li> <Link href={link.link.url}><a>{link.name} </a></Link> </li>
+          navData && navData.map((link, i) => (
+            <li key={i}> <Link href={link.link.url}><a>{link.name} </a></Link> </li>
           ))
         }
       </ul>

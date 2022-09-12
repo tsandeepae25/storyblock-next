@@ -17,7 +17,7 @@ const NewsSlider = ({ data }) => {
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={20}
-        slidesPerView={1.5}
+        slidesPerView={3.6}
         // centeredSlides={true}
         loop={true}
         navigation
@@ -49,8 +49,8 @@ const NewsSlider = ({ data }) => {
         }}
       >
         {
-          data.story.content.section_blocks[1].slide_items.map((slide) => (
-            <SwiperSlide>
+          data.story.content.section_blocks[1].slide_items.map((slide, i) => (
+            <SwiperSlide key={i}>
               <div className="slide_desc">
                 <h4>{slide.slider_desc}</h4>
               </div>

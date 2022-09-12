@@ -21,8 +21,8 @@ const LearnHow = ({ data }) => {
       >
 
         {
-          data.story.content.section_blocks[2].slide_items.map((slide) => (
-            <SwiperSlide>
+          data.story.content.section_blocks[2].slide_items.map((slide, i) => (
+            <SwiperSlide key={i}>
               <div className="slide-container">
                 <div className="slide_desc">
                   <span>{slide.slider_feature_text}</span>

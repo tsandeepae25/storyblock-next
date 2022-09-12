@@ -3,7 +3,7 @@ import FeaturedBlogItem from "./featured-blog-iem";
 
 const NewsFromAxon = ({ data }) => {
 
-  console.log(data.story.content.section_blocks[3].featured);
+  // console.log(data.story.content.section_blocks[3].featured);
 
   const [blog, setblog] = useState(data.story.content.section_blocks[3].featured);
 
